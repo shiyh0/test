@@ -1,0 +1,61 @@
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Fornac Examples</title>
+    <link rel="stylesheet" type="text/css" href="./fornac/fornac.css" media="screen" />
+    <style>
+      .options {
+        float: left;
+        margin-left: 20px;
+      }
+      .optionsform {
+        display: table;
+        margin: 5px;
+        padding: 5px;
+        clear: both;
+      }
+      textarea {
+        width: 100%;
+      }
+    </style>
+</head>
+
+ <div id="custom_colors"></div>
+    <form onsubmit="return handleCustomColorApply()" class="optionsform">
+      <label for="CustomColorText">Custom Color Text:</label>
+      <textarea rows="4" cols="80" id="CustomColorText" name="CustomColorText">
+      1:red 2:blue 9:#ff7f0e 10:#ff7f0e 11:#ff7f0e 12:#aec7e8
+      </textarea>
+      <button type="submit" name="Submit">Apply</button>
+    </form>
+
+    <script type="text/javascript" src="./jquery.js"></script>
+    <script type="text/javascript" src=""></script>
+    <script type="text/javascript" src="./fornac.js"></script>
+    <script type="text/javascript">
+     "use strict"
+     function customColorsContainer() {
+        let container = new fornac.FornaContainer("#custom_colors",
+                {'applyForce': 1,'editable':'true', 'initialSize':[500,400]});
+        let options = {'structure': '(((((.((((((.(..(((()))))...)))))).......((((......))))...)))))',
+            'sequence':             'GGCGUCCUGGUAUCCAAUCCGGAUGUACUACCAGCUGAUGAGUCCCAAAUAGGACGAAACGCC'
+        };
+        container.addRNA(options.structure, options);
+        return container;
+    }
+      
+   
+    let cc = customColorsContainer();
+
+    function handleCustomColorApply() {
+      cc.addCustomColorsText(document.getElementById("CustomColorText").value);
+      return false;
+    }
+    handleCustomColorApply();
+
+    </script>
+
+</html>
+
+ 
