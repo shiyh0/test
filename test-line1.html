@@ -1,0 +1,33 @@
+
+<html lang=en>
+
+  <head>
+    <meta charset="utf-8">
+    <!--<link href="/static/rsvdb/css/bootstrap.min.css" rel="stylesheet">
+    <script type="text/javascript" src="https://taolab.atlasbioinfo.com/rsvdb%2Fjs%2Ffornac.js"></script>-->
+    <!--<link href="https://taolab.atlasbioinfo.com/rsvdb%2Fcss%2Ffornac.css" rel="stylesheet">-->
+    <link rel="stylesheet" type="text/css" href=./fornac/fornac.css" media="screen" />
+    <script type="text/javascript" src="./jquery.js"></script>
+    
+    <script type="text/javascript" src="./fornac.js"></script>
+
+</head>
+
+
+<body>
+    <div id='rna_ss'>   </div>
+    
+ 
+  <script type="text/javascript">
+      var container = new fornac.FornaContainer("#rna_ss", {'applyForce': 1,'editable':'true', 'initialSize':[450,400]});
+
+      var options = {'structure': '..(((((...(((((..(((((....)))))..)))))..(((((((((...[[[.)))))))))..)))).{{{.{{{{......{{{{{)..((((..(((...]]]))).......))))((....)).....(((((...}}}}}.(((...)))}}}}.}}}....))))).((((....)))).',
+                     'sequence': 'CAUCCGGUAUCCCAAGACAAUCUUCGGGUUGGGUUGGGAAGUAUCAUGGCUAAUCACCAUGAUGCAAUCGGGUUGAACACUUAAUUGGGUUAAAACGGUGGGGGACGAUCCCGUAACAUCCGUCCUAACGGCGACAGACUGCACGGCCCUGCCUCAGGUGUGUCCAAUGAACAGUCGUUCCGAAAGGAAG'};
+
+      container.addRNA(options.structure, options);
+  </script>
+
+
+</body>
+
+</html>
